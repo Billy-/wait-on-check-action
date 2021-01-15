@@ -51,4 +51,4 @@ puts all_checks.reduce("") { |message, check|
 }
 
 # Bail if check is not success
-exit(false) unless all_checks.all? { |check| check["conclusion"] === "success" }
+exit(false) unless all_checks.all? { |check| check["conclusion"] === "success" || check["conclusion"] === "skipped" }
